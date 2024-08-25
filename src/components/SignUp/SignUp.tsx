@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { FaRegUser } from "react-icons/fa6";
-import { FaRegEnvelope } from "react-icons/fa";
+import { FaRegEnvelope, FaApple } from "react-icons/fa";
 import { MdLockOutline } from "react-icons/md";
 import { ImCheckboxUnchecked, ImCheckboxChecked, ImFontSize } from "react-icons/im";
 import styles from "./SignUp.module.css";
+import SignUpWith from "./SignUpWith";
+import { FcGoogle } from "react-icons/fc";
 
 const SignupForm: React.FC = () => {
   const [isChecked, setChecked] = useState(false)
@@ -72,6 +74,12 @@ const SignupForm: React.FC = () => {
         <button type="submit" className={`${styles.submitButton} fw-semibold fs-4`}>
           Sign Up
         </button>
+        <h4 className="text-center mt-3">or</h4>
+        <div className="d-flex justify-content-between px-5 mt-3">
+          <SignUpWith Icon={FcGoogle} />
+          <SignUpWith Icon={FaApple} />
+          <SignUpWith Icon={FcGoogle} />
+        </div>
       </form>
     </div>
   );
