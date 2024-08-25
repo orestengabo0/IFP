@@ -1,8 +1,11 @@
 import React from 'react'
+import WelcomePage from './components/WelcomePage/WelcomePage'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <WelcomePage />
+    </div>
   )
 }
 

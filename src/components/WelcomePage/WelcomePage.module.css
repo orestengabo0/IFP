@@ -1,0 +1,15 @@
+.welcomePage {
+    background: #1B5C02;
+    height: 100vh;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+}
+.button {
+    background: #11C511;
+    padding: 0.6rem 2rem;
+    border: 1px solid #11C511;
+    border-radius: 20px;
+}
