@@ -1,9 +1,3 @@
-.jobChoice {
-  margin: 20px;
-  margin-top: 40px;
-  padding: 20px;
-}
-
 .inputGroup {
   display: flex;
   align-items: center;
@@ -45,4 +39,25 @@ p {
   
 .submitButton:hover {
   background-color: #2df02d;
+}
+
+.jobChoice {
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 550px) {
+  .jobChoiceForm {
+    border: 1px solid #ccc;
+    width: 450px;
+    margin: 0;
+  }
+  
+  .submitButton {
+    max-width: 450px;
+  }
 }

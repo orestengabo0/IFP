@@ -17,7 +17,7 @@ const SignupForm: React.FC = () => {
   return (
     <div className={styles.signupForm}>
       <p className="text-success fs-2 fw-bold text-right">Sign Up</p>
-      <p className="text-black fs-5">Welcome to the app</p>
+      <p className="text-black fs-5 mb-3">Welcome to the app</p>
       <form>
         <div className={styles.inputGroup}>
           <FaRegUser className={styles.icon} size={20} />
