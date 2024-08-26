@@ -1,0 +1,154 @@
+.container {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #0fdd08;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.label {
+  border: 2px solid #cfc8c8;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #cfc8c8;
+  border-radius: 50%;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus {
+  font-size: 20px;
+  color: #333;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.province,
+.city {
+  border: 2px solid #0fdd08;
+  padding: 10px 5px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 180px;
+  margin: 5px 0;
+}
+
+.dropdownMenu {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.dropdownMenu li {
+  margin: 5px 0;
+}
+
+.dropdownMenu li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: normal;
+}
+
+.dropdownMenu li a:hover {
+  color: #0fdd08;
+}
+
+.dropdownItem {
+  border: 0;
+  background: none;
+}
+
+.formControl {
+  border: 1px solid #0fdd08;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 350px;
+  padding: 0.5rem 1rem;
+  outline: none;
+}
+
+.buttonSave {
+  border: 1px solid #0fdd08;
+  padding: 0.7rem 2rem;
+  background: #0fdd08;
+  border-radius: 30px;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #000;
+    box-shadow: 5px 5px 10px 10px #ccc;
+  }
+
+  .province,
+  .city {
+    max-width: 200px;
+    margin: 0 10px;
+  }
+
+  .location {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .province,
+  .city {
+    max-width: 100%;
+    margin: 5px 0;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .label {
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .plus {
+    font-size: 18px;
+  }
+}
