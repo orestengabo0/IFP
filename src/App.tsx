@@ -5,12 +5,15 @@ import SignupForm from './components/SignUp/SignUp'
 import Login from './components/Login/Login'
 import Profile from './components/Profile/Profile'
 import SideBar from './components/SideBar/SideBar'
+import CreateProject from './components/NewProject/CreateProject'
+import Footer from './components/Footer/Footer'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const App = () => {
   return (
-    <div>
-      <SideBar />
-    </div>
+    <Router>
+      <Footer />
+    </Router>
   )
 }
 
