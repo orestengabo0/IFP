@@ -8,11 +8,12 @@ import SideBar from './components/SideBar/SideBar'
 import CreateProject from './components/NewProject/CreateProject'
 import Footer from './components/Footer/Footer'
 import { BrowserRouter as Router } from 'react-router-dom'
+import Header from './components/Header/Header'
 
 const App = () => {
   return (
     <Router>
-      <Footer />
+      <Header />
     </Router>
   )
 }
