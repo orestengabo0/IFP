@@ -9,11 +9,12 @@ import CreateProject from './components/NewProject/CreateProject'
 import Footer from './components/Footer/Footer'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Header from './components/Header/Header'
+import ProjectCreated from './components/SuccessPopUp/ProjectCreated'
 
 const App = () => {
   return (
     <Router>
-      <Header />
+      <ProjectCreated confirmText='Project created successfully' buttonColor='bg-danger' />
     </Router>
   )
 }
