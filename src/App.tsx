@@ -14,7 +14,7 @@ import ProjectCreated from './components/SuccessPopUp/ProjectCreated'
 const App = () => {
   return (
     <Router>
-      <ProjectCreated confirmText='Project created successfully' buttonColor='bg-danger' />
+      <Footer />
     </Router>
   )
 }
