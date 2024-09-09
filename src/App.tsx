@@ -11,6 +11,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header/Header";
 import ProjectCreated from "./components/SuccessPopUp/ProjectCreated";
 import Notification from "./components/Notification/Notification";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 const App = () => {
   const [notifications, setNotifications] = useState<
@@ -43,7 +44,7 @@ const App = () => {
 
   return (
     <Router>
-      <Notification notificationDay="Today" notifications={notifications} />
+      <AboutUs />
     </Router>
   );
 };

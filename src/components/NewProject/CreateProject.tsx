@@ -1,38 +1,188 @@
+import { useState } from "react";
+import "./styles.css";
 import { PiCaretLeftBold } from "react-icons/pi";
+import { BsX } from "react-icons/bs";
+
+interface ProjectData {
+  name: string;
+  description: string;
+  images: string[];
+  startDate: string;
+  endDate: string;
+  landSize: number;
+}
 
 const CreateProject = () => {
+  const [projectData, setProjectData] = useState<ProjectData>({
+    name: "",
+    description: "",
+    images: [],
+    startDate: "12 October 2022",
+    endDate: "12 October 2022",
+    landSize: 5000,
+  });
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setProjectData({
+      ...projectData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      const filesArray = Array.from(event.target.files).map((file) =>
+        URL.createObjectURL(file)
+      );
+      setProjectData((prevState) => ({
+        ...prevState,
+        images: [...prevState.images, ...filesArray],
+      }));
+    }
+  };
+
+  const handleRemoveImage = (index: number) => {
+    setProjectData((prevState) => ({
+      ...prevState,
+      images: prevState.images.filter((_, i) => i !== index),
+    }));
+  };
+
+  const handleStartDateChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setProjectData({
+      ...projectData,
+      startDate: event.target.value,
+    });
+  };
+
+  const handleEndDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProjectData({
+      ...projectData,
+      endDate: event.target.value,
+    });
+  };
+
+  const handleLandSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProjectData({
+      ...projectData,
+      landSize: parseInt(event.target.value),
+    });
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log("Form data:", projectData);
+  };
+
   return (
-    <div className="p-3">
-      <div className="d-flex ">
-        <PiCaretLeftBold size={30} color="green" className="mx-3 mt-1" />
-        <p className="fw-semibold fs-3 text-success">Create new project</p>
+    <div className="container p-3">
+      <div className="back-button">
+        <PiCaretLeftBold color="green" size={30} />
       </div>
-      <form className="p-3">
-        <div>
-          <label htmlFor="project-name" className="fs-3 fw-bold text-success">
+      <h1>Create new project</h1>
+      <form onSubmit={handleSubmit} className="mt-3 p-2">
+        <div className="input-group">
+          <label htmlFor="name" className="fs-4">
             Project Name
           </label>
           <input
             type="text"
-            className={`form-control border border-success border-2 p-3 mt-3`}
+            id="name"
+            name="name"
+            value={projectData.name}
+            onChange={handleChange}
           />
         </div>
-        <div className="form-floating mt-3">
-          <textarea
-            className={`form-control border border-2 border-success rounded-2`}
-            placeholder="Leave a comment here"
-            id="floatingTextarea"
-          ></textarea>
-
-          <label
-            htmlFor="floatingTextarea"
-            className="fw-semibold fs-4 text-success"
-          >
-            Project description
+        <div className="input-group">
+          <label htmlFor="description" className="fs-4">
+            Project Description
           </label>
+          <textarea
+            id="description"
+            name="description"
+            value={projectData.description}
+            onChange={handleChange}
+          />
         </div>
-        <div className="mt-3">
-            <label htmlFor="upload-image" className="fw-semibold fs-4 text-success">Upload image</label>
+        <div className="input-group">
+          <label htmlFor="images" className="fs-5">
+            Upload Images
+          </label>
+          <div className="image-upload">
+            <input
+              type="file"
+              id="images"
+              name="images"
+              multiple
+              onChange={handleImageUpload}
+            />
+          </div>
+        </div>
+        <div className="images-grid">
+          {projectData.images.map((image, index) => (
+            <div key={index} className="image-wrapper">
+              <img
+                src={image}
+                alt={`Uploaded ${index}`}
+                className="grid-image mb-3"
+              />
+              <button
+                className="close-button bg-secondary"
+                onClick={() => handleRemoveImage(index)}
+              >
+                <BsX size={30} />
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="input-group">
+          <label htmlFor="startDate" className="fs-5">
+            Start date
+          </label>
+          <input
+            type="date"
+            id="startDate"
+            name="startDate"
+            value={projectData.startDate}
+            onChange={handleStartDateChange}
+          />
+        </div>
+        <div className="input-group">
+          <label htmlFor="endDate" className="fs-5">
+            End date
+          </label>
+          <input
+            type="date"
+            id="endDate"
+            name="endDate"
+            value={projectData.endDate}
+            onChange={handleEndDateChange}
+          />
+        </div>
+        <div className="input-group">
+          <label htmlFor="landSize" className="fs-5">
+            Land size
+          </label>
+          <div className="number-input">
+            <input
+              type="number"
+              id="landSize"
+              name="landSize"
+              className="p-1 border-0 mx-3"
+              value={projectData.landSize}
+              onChange={handleLandSizeChange}
+            />
+            <span>km</span>
+          </div>
+        </div>
+        <div className="d-flex justify-content-center">
+          <button type="submit" className="buttonSubmit rounded-5">
+            Save Project
+          </button>
         </div>
       </form>
     </div>

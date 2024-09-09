@@ -1,0 +1,10 @@
+.aboutUs {
+    box-shadow: 0 1px 10px 0 #0000001e;
+}
+
+.profileImg {
+    height: 130px;
+    width: 130px;
+    border: 1px solid #0000001e;
+    border-radius: 50%;
+}

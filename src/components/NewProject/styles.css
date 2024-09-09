@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline-width: 2px;
+  outline-offset: 3px;
+  outline-color: #12e319;
+}
+
+.input-group textarea {
+  height: 100px;
+}
+
+.image-upload {
+  display: flex;
+  align-items: center;
+}
+
+.image-upload img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.grid-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;  /* Added cursor to indicate clickable images */
+}
+
+.close-button {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.number-input {
+  display: flex;
+  align-items: center;
+}
+
+.number-input input {
+  width: 60px;
+}
+
+.number-input span {
+  margin-left: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #12e319;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+.close-button {
+  width: auto;
+}
+
+
+
+
+.close-modal:hover {
+  color: lightgray;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-image {
+    width: 100px;
+    height: 100px;
+  }
+}
