@@ -1,3 +1,4 @@
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import styles from "./AboutUs.module.css";
 
@@ -5,7 +6,7 @@ const AboutUs = () => {
   return (
     <div>
       <Header />
-      <div className={`aboutUs ${styles.aboutUs} fs-4 fw-semibold px-5 p-2`}>
+      <div className={`aboutUs ${styles.aboutUs} fs-4 fw-semibold px-5 p-3`}>
         About Us
       </div>
       <div className={`d-flex justify-content-center p-4`}>
@@ -20,6 +21,7 @@ const AboutUs = () => {
         </p>
       </div>
       <div className="Faq-section"></div>
+      <Footer />
     </div>
   );
 };

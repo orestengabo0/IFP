@@ -13,22 +13,22 @@ const Footer = () => {
           <img src={logo} alt="A logo" className={`logo ${styles.logo}`} />
         </div>
         <div className="d-flex justify-content-center mt-3">
-          <Link to="#" className={`link ${styles.link} fs-5 text-secondary`}>
+          <Link to="#" className={`link ${styles.link}  text-secondary`}>
             Home
           </Link>
         </div>
         <div className="d-flex justify-content-center mt-1">
-          <Link to="#" className={`link ${styles.link} fs-5 text-secondary`}>
+          <Link to="#" className={`link ${styles.link} text-secondary`}>
             Profile
           </Link>
         </div>
         <div className="d-flex justify-content-center mt-1">
-          <Link to="#" className={`link ${styles.link} fs-5 text-secondary`}>
+          <Link to="#" className={`link ${styles.link}  text-secondary`}>
             Contact
           </Link>
         </div>
         <div className="d-flex justify-content-center mt-1">
-          <Link to="#" className={`link ${styles.link} fs-5 text-secondary`}>
+          <Link to="#" className={`link ${styles.link}  text-secondary`}>
             About
           </Link>
         </div>
@@ -51,7 +51,7 @@ const Footer = () => {
 
       <div className="mt-3 p-4">
         <h3 className="text-center">Join Our Newsletter</h3>
-        <p className="fs-5 text-secondary text-center">
+        <p className=" text-secondary text-center">
           Be the first to know about our latest updates, exclusive offers, and
           more.
         </p>
@@ -68,18 +68,18 @@ const Footer = () => {
 
       <div className="p-4">
         <div className="d-flex justify-content-between px-4 mx-5 mt-3">
-          <Link to={"#"} className={`link ${styles.link} fs-5 text-secondary`}>
+          <Link to={"#"} className={`link ${styles.link}  text-secondary`}>
             English
           </Link>
-          <Link to={"#"} className={`link ${styles.link} fs-5 text-secondary`}>
+          <Link to={"#"} className={`link ${styles.link}  text-secondary`}>
             Privacy
           </Link>
-          <Link to={"#"} className={`link ${styles.link} fs-5 text-secondary`}>
+          <Link to={"#"} className={`link ${styles.link}  text-secondary`}>
             Legal
           </Link>
         </div>
         <div className="mt-3">
-          <p className="text-center fs-5 text-secondary">
+          <p className="text-center  text-secondary">
             &copy; 2024 IFp. All Rights Reserved.
           </p>
         </div>
