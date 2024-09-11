@@ -1,6 +1,6 @@
-import React from "react";
 import styles from "./WelcomePage.module.css";
 import logo from "../../assets/Logo.svg";
+import { Link } from "react-router-dom";
 
 const WelcomePage = () => {
   return (
@@ -19,9 +19,23 @@ const WelcomePage = () => {
           Sponsors and Middleman
         </p>
       </div>
-      <div className="text-center mt-5">
-        <button className={`button ${styles.button} text-white fw-semibold mx-5`}>Sign In</button>
-        <button className={`button ${styles.button} text-white fw-semibold me-5`}>Login</button>
+      <div className="mt-5">
+        <div className="text-center">
+          <Link
+            to={"/register"}
+            className={`button ${styles.button} text-white text-decoration-none fs-5 d-block fw-semibold mx-5 rounded-5`}
+          >
+            Sign In
+          </Link>
+        </div>
+        <div className="text-center mt-5">
+          <Link
+            to={"/login"}
+            className={`button ${styles.button} text-white text-decoration-none fs-5 d-block fw-semibold mx-5 rounded-5`}
+          >
+            Login
+          </Link>
+        </div>
       </div>
     </div>
   );

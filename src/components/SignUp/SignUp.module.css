@@ -31,18 +31,8 @@
 
 .submitButton {
   width: 100%;
-  padding: 8px;
-  border-radius: 20px;
-  border: none;
-  background-color: #11C511;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
 }
 
-.submitButton:hover {
-  background-color: #2df02d;
-}
 @media screen and (min-width: 900px) {
   .signupForm {
     width: 500px;

@@ -1,13 +1,9 @@
 .notification {
-    width: 70%;
+    width: 100%;
     border: 1px solid #fff;
     background: #fff;
     border-radius: 10px;
     box-shadow: 2px 4px 8px 2px #0000001a;
-}
-.container {
-    height: 100vh;
-    background: #DBF6DB;
 }
 .buttonOk {
     border: none;

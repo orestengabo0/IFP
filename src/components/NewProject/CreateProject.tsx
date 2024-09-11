@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./styles.css";
 import { PiCaretLeftBold } from "react-icons/pi";
 import { BsX } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 interface ProjectData {
   name: string;
@@ -73,6 +74,11 @@ const CreateProject = () => {
     });
   };
 
+  const navigate = useNavigate()
+  const handleBack = () => {
+    navigate(-1)
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Form data:", projectData);
@@ -80,7 +86,7 @@ const CreateProject = () => {
 
   return (
     <div className="container p-3">
-      <div className="back-button">
+      <div className="back-button" onClick={handleBack}>
         <PiCaretLeftBold color="green" size={30} />
       </div>
       <h1>Create new project</h1>

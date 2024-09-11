@@ -6,7 +6,8 @@ import styles from "./Notification.module.css";
 
 interface NotificationCardProps {
     notificationParagraph: string,
-    notificationTime: string
+    notificationTime: string,
+    isRead: boolean
 }
 
 const NotificationCard = ({notificationParagraph, notificationTime}:NotificationCardProps) => {

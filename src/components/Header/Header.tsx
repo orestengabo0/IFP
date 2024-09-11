@@ -3,6 +3,7 @@ import logo from "../../assets/Logo.svg";
 import children from "../../assets/children.png";
 import { IoGridOutline } from "react-icons/io5";
 import { MdNotificationsNone } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,22 +15,28 @@ const Header = () => {
         IFP
       </div>
       <div className="d-flex">
-        <div>
-          <MdNotificationsNone
-            size={35}
-            color="white"
-            className={`mt-2 mx-2`}
-          />
-        </div>
-        <div>
-          <IoGridOutline size={30} color="white" className={`mt-2 mx-2`} />
-        </div>
+        <Link to={"/notifications"}>
+          <div>
+            <MdNotificationsNone
+              size={35}
+              color="white"
+              className={`mt-2 mx-2`}
+            />
+          </div>
+        </Link>
+        <Link to={"/dashboard"}>
+          <div>
+            <IoGridOutline size={30} color="white" className={`mt-2 mx-2`} />
+          </div>
+        </Link>
         <div className="mx-2">
-          <img
-            src={children}
-            alt="Profile picture"
-            className={`profilePicture ${styles.profilePicture}`}
-          />
+          <Link to={"/my-profile"}>
+            <img
+              src={children}
+              alt="Profile picture"
+              className={`profilePicture ${styles.profilePicture}`}
+            />
+          </Link>
         </div>
       </div>
     </div>

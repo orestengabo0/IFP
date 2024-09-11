@@ -1,51 +1,37 @@
-import React, { useEffect, useState } from "react";
-import JobChoice from "./components/JobChoice/JobChoice";
+import React from "react";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import SignupForm from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
-import Profile from "./components/Profile/Profile";
-import SideBar from "./components/SideBar/SideBar";
-import CreateProject from "./components/NewProject/CreateProject";
-import Footer from "./components/Footer/Footer";
-import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./components/Header/Header";
-import ProjectCreated from "./components/SuccessPopUp/ProjectCreated";
-import Notification from "./components/Notification/Notification";
-import AboutUs from "./components/AboutUs/AboutUs";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Notification from "./components/Notification/NotificationList";
+import FundProject from "./components/FundProject/FundProject";
+import ChooseAmount from "./components/FundProject/ChooseAmount";
+import ConfirmPayment from "./components/FundProject/ConfirmPayment";
+import Menu from "./components/Menu/Menu";
 import MyProfile from "./components/MyProfile/MyProfile";
 
 const App = () => {
-  const [notifications, setNotifications] = useState<
-    Array<{ id: string; text: string; time: string }>
-  >([]);
-
-  useEffect(() => {
-    const fetchNotifications = async () => {
-      const data = [
-        {
-          id: "1",
-          text: "Your Latest proposal has been turned down and now you can submit a new one.",
-          time: "2 hours",
-        },
-        {
-          id: "2",
-          text: "Your Latest proposal has been accepted.",
-          time: "1 hour",
-        },
-        {
-          id: "4",
-          text: "Your Latest proposal has been accepted.",
-          time: "5 hour",
-        }
-      ];
-      setNotifications(data)
-    };
-    fetchNotifications()
-  },[]);
+  const notificationDay = new Date().toLocaleDateString(); // Get current date
 
   return (
     <Router>
-      <MyProfile />
+      <Routes>
+        <Route path="/" element={<WelcomePage />}></Route>
+        <Route path="/register" element={<SignupForm />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/funds/deposit/card" element={<FundProject />}></Route>
+        <Route path="/funds/deposit/amount" element={<ChooseAmount />}></Route>
+        <Route
+          path="/funds/deposit/confirm-payment"
+          element={<ConfirmPayment />}
+        ></Route>
+        <Route path="/menu" element={<Menu />}></Route>
+        <Route
+          path="/notifications"
+          element={<Notification notificationDay={notificationDay} />}
+        />
+        <Route path="/my-profile" element={<MyProfile />}></Route>
+      </Routes>
     </Router>
   );
 };
