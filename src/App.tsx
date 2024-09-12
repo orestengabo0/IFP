@@ -9,6 +9,7 @@ import ChooseAmount from "./components/FundProject/ChooseAmount";
 import ConfirmPayment from "./components/FundProject/ConfirmPayment";
 import Menu from "./components/Menu/Menu";
 import MyProfile from "./components/MyProfile/MyProfile";
+import Dashboard from "./components/Dashboard/Approval";
 
 const App = () => {
   const notificationDay = new Date().toLocaleDateString(); // Get current date
@@ -31,6 +32,9 @@ const App = () => {
           element={<Notification notificationDay={notificationDay} />}
         />
         <Route path="/my-profile" element={<MyProfile />}></Route>
+        <Route path="/dashboard" element={<Dashboard selectedTab={"All"} onTabChange={function (tab: "All" | "Approved" | "Unapproved"): void {
+          throw new Error("Function not implemented.");
+        } } />}></Route>
       </Routes>
     </Router>
   );

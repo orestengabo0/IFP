@@ -1,0 +1,20 @@
+.dashboard {
+  width: 100%;
+}
+
+.active {
+  color: white;
+}
+
+button {
+    max-width: auto;
+}
+img {
+  height: 70px;
+  width: 70px;
+}
+
+.readMore {
+  max-width: 130px;
+  background: #ccc;
+}

@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div
-      className={`container ${styles.container} p-4 d-flex justify-content-between`}
-    >
+    <div className={`container bg-success p-4 d-flex justify-content-between`}>
       <div className="text-white fw-bold fs-1">
-        <img src={logo} alt="A logo" className={`logo ${styles.logo}`} />
+        <Link to={"/dashboard"}>
+          <img src={logo} alt="A logo" className={`logo ${styles.logo}`} />
+        </Link>
         IFP
       </div>
       <div className="d-flex">
