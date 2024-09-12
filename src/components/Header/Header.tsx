@@ -24,7 +24,7 @@ const Header = () => {
             />
           </div>
         </Link>
-        <Link to={"/dashboard"}>
+        <Link to={"/menu"}>
           <div>
             <IoGridOutline size={30} color="white" className={`mt-2 mx-2`} />
           </div>

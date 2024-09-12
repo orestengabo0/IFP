@@ -5,7 +5,7 @@ import { MdLockOutline } from "react-icons/md";
 import { ImCheckboxChecked, ImCheckboxUnchecked } from "react-icons/im";
 import { FcGoogle } from "react-icons/fc";
 import SignUpWith from "../SignUp/SignUpWith";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -13,9 +13,10 @@ const Login = () => {
     password: "",
     rememberMe: false,
   });
-  
+
   const [isChecked, setChecked] = useState(false);
 
+  const navigate = useNavigate()
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
@@ -25,6 +26,7 @@ const Login = () => {
       rememberMe: false,
     });
     setChecked(false);
+    navigate('/dashboard')
   };
 
   const handleCheckBoxClick = () => {
@@ -86,14 +88,12 @@ const Login = () => {
           </div>
           <p className="text-danger">Forgot password?</p>
         </div>
-        <Link to={'/dashboard'}>
-          <button
-            type="submit"
-            className={`btn btn-success ${styles.submitButton} fw-semibold fs-4`}
-          >
-            Login
-          </button>
-        </Link>
+        <button
+          type="submit"
+          className={`btn btn-success ${styles.submitButton} fw-semibold fs-4`}
+        >
+          Login
+        </button>
         <h4 className="text-center mt-3">or</h4>
         <div className="d-flex justify-content-between px-5 mt-3">
           <SignUpWith Icon={FcGoogle} />

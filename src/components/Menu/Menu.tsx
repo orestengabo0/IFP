@@ -38,12 +38,16 @@ const Menu = () => {
       path: "/my-profile",
     },
   ];
+
+  const handleBack = () => {
+    navigate(-1)
+  }
   return (
     <div
       className={`container ${styles.container} d-flex justify-content-center`}
     >
       <div>
-        <div className="d-flex">
+        <div className="d-flex" onClick={handleBack}>
           <IoMdCloseCircleOutline size={40} color="green" />
         </div>
         {menuItems.map((item) => (
