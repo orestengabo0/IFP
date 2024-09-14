@@ -13,22 +13,22 @@ const Footer = () => {
           <img src={logo} alt="A logo" className={`logo ${styles.logo}`} />
         </div>
         <div className="d-flex justify-content-center mt-3">
-          <Link to="#" className={`link ${styles.link}  text-secondary`}>
+          <Link to="/dashboard" className={`link ${styles.link}  text-secondary`}>
             Home
           </Link>
         </div>
         <div className="d-flex justify-content-center mt-1">
-          <Link to="#" className={`link ${styles.link} text-secondary`}>
+          <Link to="/my-profile" className={`link ${styles.link} text-secondary`}>
             Profile
           </Link>
         </div>
         <div className="d-flex justify-content-center mt-1">
-          <Link to="#" className={`link ${styles.link}  text-secondary`}>
+          <Link to="/contacts" className={`link ${styles.link}  text-secondary`}>
             Contact
           </Link>
         </div>
         <div className="d-flex justify-content-center mt-1">
-          <Link to="#" className={`link ${styles.link}  text-secondary`}>
+          <Link to="/about-us" className={`link ${styles.link}  text-secondary`}>
             About
           </Link>
         </div>

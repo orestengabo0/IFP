@@ -5,6 +5,8 @@ import ProposalStats from "./ProposalStats";
 import NewProposals from "./NewProposals";
 import BarChart from "./BarChart";
 import Footer from "../Footer/Footer";
+import SponsoredProposals from "./SponsoredProposals";
+import YearDropdown from "./YearDropdown"; // Add this import
 
 interface DashboardProps {
   selectedTab: "All" | "Approved" | "Unapproved";
@@ -90,12 +92,30 @@ const Approvals: React.FC<DashboardProps> = ({ selectedTab, onTabChange }) => {
       <div className="p-3">
         <div className="d-flex justify-content-between mb-3">
           <h3 className="mt-1">New Proposals</h3>
-          <input type="date" className="border border-success border-2 rounded-5" />
+          <input
+            type="date"
+            className="border border-success border-2 rounded-5"
+            style={{maxHeight: "50px", maxWidth: "145px"}}
+          />
         </div>
         <NewProposals />
       </div>
+      <div className="p-3">
+        <div className="d-flex justify-content-between mb-3">
+          <h4 className="mt-1">Sponsored Proposals</h4>
+          <input
+            type="date"
+            className="border border-success border-2 rounded-5"
+            style={{maxHeight: "50px", maxWidth: "140px"}}
+          />
+        </div>
+        <SponsoredProposals />
+      </div>
       <div>
-        <BarChart />
+        <YearDropdown />
+        <div className="p-2">
+          <BarChart />
+        </div>
       </div>
       <Footer />
     </div>

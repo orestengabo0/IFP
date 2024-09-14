@@ -4,7 +4,7 @@ import { RxCaretRight, RxCaretDown } from "react-icons/rx";
 import styles from "./Profile.module.css";
 import { MdRadioButtonChecked, MdRadioButtonUnchecked } from "react-icons/md";
 
-const ProfilePictureUploader: React.FC = () => {
+const Profile: React.FC = () => {
   const [image, setImage] = useState<string | null>(null);
   const [isProvinceDropdownOpen, setIsProvinceDropdownOpen] = useState(false);
   const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
@@ -96,7 +96,7 @@ const ProfilePictureUploader: React.FC = () => {
           <div className="d-flex justify-content-center">
             <div className={styles.circle}>
               {image ? (
-                <img src={image} alt="Profile" className={styles.image} />
+                <img src={image} alt="Profile" className={`border-success border-3 ${styles.image}`} />
               ) : (
                 <label htmlFor="file-input" className={styles.label}>
                   <FiPlus className={styles.plus} />
@@ -115,7 +115,7 @@ const ProfilePictureUploader: React.FC = () => {
           <div className="location d-flex justify-content-between">
             <div>
               <button
-                className={`province ${styles.province} fw-semibold fs-3`}
+                className={`border-success border-3 ${styles.province} fw-semibold fs-3`}
                 onClick={toggleProvinceDropdown}
               >
                 {selectedProvince || "Province"}
@@ -142,7 +142,7 @@ const ProfilePictureUploader: React.FC = () => {
             </div>
             <div>
               <button
-                className={`city ${styles.city} fw-semibold fs-3`}
+                className={`border-success border-3 ${styles.city} fw-semibold fs-3`}
                 onClick={toggleCityDropdown}
                 disabled={!selectedProvince}
               >
@@ -209,7 +209,7 @@ const ProfilePictureUploader: React.FC = () => {
           </div>
           <div className="d-flex justify-content-center mt-4">
             <button
-              className={`buttonSave ${styles.buttonSave} text-white fw-semibold fs-3 mb-3`}
+              className={`btn btn-success rounded-5 p-2 fw-semibold fs-3 mb-3`}
             >
               Save Information
             </button>
@@ -220,4 +220,4 @@ const ProfilePictureUploader: React.FC = () => {
   );
 };
 
-export default ProfilePictureUploader;
+export default Profile;

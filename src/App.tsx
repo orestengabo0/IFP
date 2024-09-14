@@ -1,4 +1,3 @@
-import React from "react";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import SignupForm from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
@@ -10,18 +9,25 @@ import ConfirmPayment from "./components/FundProject/ConfirmPayment";
 import Menu from "./components/Menu/Menu";
 import MyProfile from "./components/MyProfile/MyProfile";
 import Dashboard from "./components/Dashboard/Approval";
+import Profile from "./components/Profile/Profile";
+import ContactForm from "./components/Contacts/ContactForm";
+import ProjectDesc from "./components/ProjectDescription/ProjectDesc";
 
 const App = () => {
   const notificationDay = new Date().toLocaleDateString(); // Get current date
 
   return (
+    <div style={{overflow: "hidden", boxSizing: "border-box"}}>
+
     <Router>
       <Routes>
         <Route path="/" element={<WelcomePage />}></Route>
         <Route path="/register" element={<SignupForm />}></Route>
+        <Route path="/complete-profile" element={<Profile />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/funds/deposit/card" element={<FundProject />}></Route>
         <Route path="/funds/deposit/amount" element={<ChooseAmount />}></Route>
+        <Route path="/contacts" element={<ContactForm />}></Route>
         <Route
           path="/funds/deposit/confirm-payment"
           element={<ConfirmPayment />}
@@ -35,8 +41,10 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard selectedTab={"All"} onTabChange={function (tab: "All" | "Approved" | "Unapproved"): void {
           throw new Error("Function not implemented.");
         } } />}></Route>
+        <Route path="/project-description" element={<ProjectDesc />}></Route>
       </Routes>
     </Router>
+    </div>
   );
 };
 

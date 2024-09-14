@@ -68,7 +68,26 @@ const NotificationList = ({ notificationDay }: NotificationProps) => {
   };
 
   if (loading) {
-    return <p>Loading notifications....</p>;
+    return (
+      <div className="p-3 pt-4">
+        <div className="d-flex justify-content-evenly">
+          <div className="back-button" onClick={handleBack}>
+            <PiCaretLeftBold color="green" size={30} />
+          </div>
+          <h1>Notifications</h1>
+          <div className="d-flex">
+            <p
+              className="mt-1"
+              onClick={markAllAsRead}
+              style={{ cursor: "pointer" }}
+            >
+              Mark all as read
+            </p>
+          </div>
+        </div>
+        <p>Loading notifications....</p>
+      </div>
+    );
   }
 
   if (error) {

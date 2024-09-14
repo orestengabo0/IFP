@@ -1,8 +1,7 @@
 import styles from "./Dashboard.module.css";
 import farmer from "../../assets/farmer_1-removebg-preview.png";
-import { Link } from "react-router-dom";
 
-const NewProposals = () => {
+const SponsoredProposals = () => {
   return (
     <div>
       <div className="d-flex align-items-center bg-success rounded-4 p-3">
@@ -16,13 +15,11 @@ const NewProposals = () => {
             other users.
           </p>
           <div className="d-flex justify-content-center">
-            <Link to={'/project-description'}>
-              <button
-                className={`btn btn-light ${styles.readMore} fs-5 fw-semibold text-success`}
-              >
-                Read more
-              </button>
-            </Link>
+            <button
+              className={`btn btn-light ${styles.readMore} fs-5 fw-semibold text-success`}
+            >
+              Read more
+            </button>
           </div>
         </div>
       </div>
@@ -30,4 +27,4 @@ const NewProposals = () => {
   );
 };
 
-export default NewProposals;
+export default SponsoredProposals;

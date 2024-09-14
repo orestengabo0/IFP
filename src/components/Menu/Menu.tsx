@@ -12,28 +12,28 @@ const Menu = () => {
     {
       id: 1,
       label: "Dashboard",
-      icon: <BsGrid size={30} color="green" />,
+      icon: <BsGrid size={30} color="#198754" />,
       className: styles.dashboard,
       path: "/dashboard",
     },
     {
       id: 2,
       label: "Contact",
-      icon: <FaPhoneAlt size={30} color="green" />,
+      icon: <FaPhoneAlt size={30} color="#198754" />,
       className: styles.contacts,
       path: "/contacts",
     },
     {
       id: 3,
       label: "About",
-      icon: <RiMessage2Line size={30} color="green" />,
+      icon: <RiMessage2Line size={30} color="#198754" />,
       className: styles.about,
       path: "/about-us",
     },
     {
       id: 4,
       label: "Profile",
-      icon: <FaUser size={30} color="green" />,
+      icon: <FaUser size={30} color="#198754" />,
       className: styles.profile,
       path: "/my-profile",
     },
@@ -48,7 +48,7 @@ const Menu = () => {
     >
       <div>
         <div className="d-flex" onClick={handleBack}>
-          <IoMdCloseCircleOutline size={40} color="green" />
+          <IoMdCloseCircleOutline size={40} color="#198754" />
         </div>
         {menuItems.map((item) => (
           <button
