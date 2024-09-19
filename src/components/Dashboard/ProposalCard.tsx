@@ -2,18 +2,22 @@ import styles from "./Dashboard.module.css";
 import farmer from "../../assets/farmer_1-removebg-preview.png";
 import { Link } from "react-router-dom";
 
-const NewProposals = () => {
+interface Props {
+  proposalHeading: string,
+  proposalDescription: string
+}
+
+const ProposalCard = ({proposalHeading, proposalDescription}: Props) => {
   return (
     <div>
-      <div className="d-flex align-items-center bg-success rounded-4 p-3">
+      <div className="d-flex align-items-center bg-success rounded-4 p-1 px-2">
         <img src={farmer} alt="A farmer" />
         <div>
-          <h6 className="text-center text-white-50">
-            The animal food support project
+          <h6 className=" fw-semibold text-white">
+            {proposalHeading}
           </h6>
-          <p className="px-3 text-white-50">
-            This project aims at producing adequate food supplies to farmers and
-            other users.
+          <p className="px-2 text-white-50">
+            {proposalDescription}
           </p>
           <div className="d-flex justify-content-center">
             <Link to={'/project-description'}>
@@ -30,4 +34,4 @@ const NewProposals = () => {
   );
 };
 
-export default NewProposals;
+export default ProposalCard;

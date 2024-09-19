@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import styles from "./Dashboard.module.css";
 import Header from "../Header/Header";
 import ProposalStats from "./ProposalStats";
-import NewProposals from "./NewProposals";
+import ProposalCard from "./ProposalCard";
 import BarChart from "./BarChart";
 import Footer from "../Footer/Footer";
 import SponsoredProposals from "./SponsoredProposals";
-import YearDropdown from "./YearDropdown"; // Add this import
+import YearDropdown from "./YearDropdown";
 
 interface DashboardProps {
   selectedTab: "All" | "Approved" | "Unapproved";
@@ -59,7 +59,9 @@ const Approvals: React.FC<DashboardProps> = ({ selectedTab, onTabChange }) => {
 
   return (
     <div className="d-flex align-items-center flex-column">
-      <Header />
+      <div className="mb-5">
+        <Header />
+      </div>
       <h3 className="mt-3">Dashboard</h3>
       <div className={`d-flex ${styles.dashboard} justify-content-evenly p-3`}>
         <button
@@ -95,10 +97,14 @@ const Approvals: React.FC<DashboardProps> = ({ selectedTab, onTabChange }) => {
           <input
             type="date"
             className="border border-success border-2 rounded-5"
-            style={{maxHeight: "50px", maxWidth: "145px"}}
+            style={{ maxHeight: "50px", maxWidth: "145px" }}
           />
         </div>
-        <NewProposals />
+        <ProposalCard
+          proposalHeading="The animal food support project"
+          proposalDescription="This project aims at producing adequate food supplies to farmers and
+            other users."
+        />
       </div>
       <div className="p-3">
         <div className="d-flex justify-content-between mb-3">
@@ -106,7 +112,7 @@ const Approvals: React.FC<DashboardProps> = ({ selectedTab, onTabChange }) => {
           <input
             type="date"
             className="border border-success border-2 rounded-5"
-            style={{maxHeight: "50px", maxWidth: "140px"}}
+            style={{ maxHeight: "50px", maxWidth: "140px" }}
           />
         </div>
         <SponsoredProposals />

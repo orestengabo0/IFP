@@ -13,8 +13,8 @@ const AboutUs = () => {
         <img src="" alt="" className={`${styles.profileImg}`} />
       </div>
       <div className="px-5">
-        <h4>What we do</h4>
-        <p>
+        <h3 className="fw-semibold">What we do</h3>
+        <p className="fs-5">
           We are dedicated software which aim at making a simple way of co
           nnecting the farmers and their sp onsors which aim at making peop le
           happy and very impressed
